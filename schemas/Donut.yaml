@@ -1,0 +1,12 @@
+type: object
+required:
+  - flavor
+  - id
+properties:
+  id:
+    type: integer
+    format: int64
+  flavor:
+    type: string
+  tag:
+    type: string
