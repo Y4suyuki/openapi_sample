@@ -10,57 +10,19 @@ servers:
         default: v1
 paths:
   /pets:
-    get:
-      summary: List all pets
-      operationId: listPets
-      tags:
-        - pets
-      parameters:
-        - $ref: "#/components/parameters/limit"
-      responses:
-        '200':
-          description: A paged array of pets
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Pet"
+    $ref: "./paths/pets.yaml"
   /pets/{petId}:
-    $ref: "paths/pet.yaml"
+    $ref: "./paths/pet.yaml"
   /donuts:
-    get:
-      summary: List all donuts
-      operationId: listDonuts
-      tags:
-        - donuts
-      parameters:
-        - $ref: "#/components/parameters/limit"
-      responses:
-        '200':
-          description: A paged array of donuts
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Donut"
+    $ref: "./paths/donuts.yaml"
 components:
   parameters:
     petId:
       $ref: "./parameters/petId.yaml"
     limit:
-      name: limit
-      in: query
-      description: How many items to return at one time (max 100)
-      required: false
-      schema:
-        type: integer
-        format: int32
+      $ref: "./parameters/limit.yaml"
   schemas:
     Pet:
       $ref: "./schemas/Pet.yaml"
-
     Donut:
       $ref: "./schemas/Donut.yaml"
-              

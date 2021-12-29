@@ -1,0 +1,16 @@
+get:
+  summary: List all donuts
+  operationId: listDonuts
+  tags:
+    - donuts
+  parameters:
+    - $ref: "../parameters/limit.yaml"
+  responses:
+    '200':
+      description: A paged array of donuts
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "../schemas/Donut.yaml"
