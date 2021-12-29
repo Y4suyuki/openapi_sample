@@ -2,6 +2,12 @@ openapi: "3.0.0"
 info:
   title: sample
   version: "0.1.0"
+servers:
+  - url: http://localhost/{basePath}
+    description: dev server
+    variables:
+      basePath:
+        default: v1
 paths:
   /pets:
     get:
@@ -21,20 +27,7 @@ paths:
                 items:
                   $ref: "#/components/schemas/Pet"
   /pets/{petId}:
-    get:
-      summary: Info for a specific pet
-      operationId: showPetById
-      tags:
-        - pets
-      parameters:
-        - $ref: "#/components/parameters/petId"
-      responses:
-        '200':
-          description: Expected responses to a valid request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Pet"
+    $ref: "paths/pet.yaml"
   /donuts:
     get:
       summary: List all donuts
@@ -55,12 +48,7 @@ paths:
 components:
   parameters:
     petId:
-      name: petId
-      in: path
-      required: true
-      description: The id of the pet to retrieve
-      schema:
-        type: string
+      $ref: "./parameters/petId.yaml"
     limit:
       name: limit
       in: query
