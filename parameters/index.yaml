@@ -1,0 +1,4 @@
+petId:
+  $ref: "./petId.yaml"
+limit:
+  $ref: "./limit.yaml"

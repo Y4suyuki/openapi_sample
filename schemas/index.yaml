@@ -1,0 +1,4 @@
+Pet:
+  $ref: "./Pet.yaml"
+Donut:
+  $ref: "./Donut.yaml"

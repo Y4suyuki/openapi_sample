@@ -9,20 +9,9 @@ servers:
       basePath:
         default: v1
 paths:
-  /pets:
-    $ref: "./paths/pets.yaml"
-  /pets/{petId}:
-    $ref: "./paths/pet.yaml"
-  /donuts:
-    $ref: "./paths/donuts.yaml"
+  $ref: "./paths/index.yaml"
 components:
   parameters:
-    petId:
-      $ref: "./parameters/petId.yaml"
-    limit:
-      $ref: "./parameters/limit.yaml"
+    $ref: "./parameters/index.yaml"
   schemas:
-    Pet:
-      $ref: "./schemas/Pet.yaml"
-    Donut:
-      $ref: "./schemas/Donut.yaml"
+    $ref: "./schemas/index.yaml"
