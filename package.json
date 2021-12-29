@@ -1,5 +1,10 @@
 {
+  "scripts": {
+    "build": "swagger-merger -i openapi.yaml -o output_openapi.yaml",
+    "watch": "nodemon --watch openapi.yaml --exec npm run build"
+  },
   "devDependencies": {
+    "nodemon": "^2.0.15",
     "swagger-merger": "^1.4.3"
   }
 }

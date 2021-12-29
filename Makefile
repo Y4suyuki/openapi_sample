@@ -6,4 +6,4 @@ clean:
 	rm -rf output_openapi.yaml
 
 build:
-	npx swagger-merger -i openapi.yaml -o output_openapi.yaml
+	npm run build
